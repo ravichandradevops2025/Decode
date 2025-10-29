@@ -5,12 +5,16 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'danger';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   children,
+  leftIcon,
+  rightIcon,
   className = '',
   ...props
 }) => {
@@ -29,12 +33,26 @@ export const Button: React.FC<ButtonProps> = ({
     lg: 'px-6 py-3 text-lg',
   };
 
+  const iconSizeClass = size === 'lg' ? 'text-lg' : size === 'sm' ? 'text-sm' : 'text-base';
+
   return (
     <button
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       {...props}
     >
-      {children}
+      {leftIcon && (
+        <span className={`inline-flex items-center mr-2 ${iconSizeClass}`}>
+          {leftIcon}
+        </span>
+      )}
+
+      <span className="inline-flex items-center">{children}</span>
+
+      {rightIcon && (
+        <span className={`inline-flex items-center ml-2 ${iconSizeClass}`}>
+          {rightIcon}
+        </span>
+      )}
     </button>
   );
 };

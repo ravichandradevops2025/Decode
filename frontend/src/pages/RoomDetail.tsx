@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
+// Input not used in this page
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/hooks/useAuth';
 import { Room, RoomParticipant, RoomMessage } from '@/types';
@@ -13,7 +13,7 @@ import { RealtimeChannel } from '@supabase/supabase-js';
 
 export const RoomDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { user, profile } = useAuth();
+  const { user } = useAuth();
   const [room, setRoom] = useState<Room | null>(null);
   const [participants, setParticipants] = useState<RoomParticipant[]>([]);
   const [messages, setMessages] = useState<RoomMessage[]>([]);

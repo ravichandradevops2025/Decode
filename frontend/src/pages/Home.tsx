@@ -1,7 +1,8 @@
 // Home page
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Users, Trophy, ArrowRight } from 'lucide-react';
+import { BookOpen, Users, Trophy, ArrowRight, Search } from 'lucide-react';
+import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { useAuth } from '@/hooks/useAuth';
@@ -91,6 +92,18 @@ export const Home: React.FC = () => {
           </Link>
         </section>
       )}
+
+      {/* Examples: small button and input with icon */}
+      <section className="py-8">
+        <h3 className="text-lg font-semibold mb-4">Component examples</h3>
+        <div className="flex items-center space-x-4">
+          <Button size="sm" leftIcon={<ArrowRight size={14} />}>
+            Small Action
+          </Button>
+
+          <Input placeholder="Search courses" icon={<Search size={16} />} />
+        </div>
+      </section>
     </div>
   );
 };

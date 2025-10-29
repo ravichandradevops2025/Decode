@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
-import { Input } from '@/components/ui/Input';
+// Input not used in this page
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/hooks/useAuth';
-import { Gift, Package, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 // Sample reward items

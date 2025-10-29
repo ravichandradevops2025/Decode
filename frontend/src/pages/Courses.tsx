@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { supabase } from '@/lib/supabase';
 import { Course } from '@/types';
-import { BookOpen, Clock, Award } from 'lucide-react';
+import { BookOpen, Award } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const Courses: React.FC = () => {
